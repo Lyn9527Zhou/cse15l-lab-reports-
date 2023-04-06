@@ -1,1 +1,1 @@
-Lyn2Jinx
+Lin2Jinx
