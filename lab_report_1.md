@@ -34,7 +34,9 @@ Once you finished, you should be able to open a window like this:
 ![Image](VScode.png)(*It might be in different colors, menu bar, depending on the system and settings*)
 
 ```
-# Congratulations! You have succeeded to have VScode on your computer, it is a powerful tool and would be quite helpful for this course! Now we already have everything to have remotely connect, only one step to success.
+# Congratulations! You have succeeded to have VScode on your computer, it is a
+powerful tool and would be quite helpful for this course! Now we already have 
+everything to have remotely connect, only one step to success.
 ```
 
 * **Step 3:**
@@ -59,7 +61,8 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
  ![image](after_log_in.png)
  
  ```
- # Congratulations! You have just succeeded to connect to the server! Let's try some command to see what we can do on the server!
+ # Congratulations! You have just succeeded to connect to the server! Let's 
+ try some command to see what we can do on the server!
  ```
  
  ## Running some commands on the server
@@ -76,7 +79,8 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
  ![image](try_some_commands.png)
  
 ```
-# Having fun exploring what you could do in the server! If you want to quit or log out of the remote server in your terminal, you can use
+# Having fun exploring what you could do in the server! If you want to 
+quit or log out of the remote server in your terminal, you can use
 * Ctrl-D
 * Run the command exit
 ```
