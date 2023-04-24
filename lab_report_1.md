@@ -67,17 +67,17 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
  
  ## Running some commands on the server
  Some useful commands to try:
- * `cd ~`
- * `cd`
- * `ls -lat`
- * `ls -a`
- * `ls <directory>` , where `<directory>` is `/home/linux/ieng6/cs15lsp23/cs15lsp23sq`, where`sq` is one of the other group members' username for this course
- * `cp /home/linux/ieng6/cs15lsp23/public/hello.txt ~/`
- * `cat /home/linux/ieng6/cs15lwi23/public/hello.txt`
+ * `cd ~` (*This command changes the current working dictionary to the home directory of the current user*)
+ * `cd` (*This command also changes the current working dictionary to the home directory of the current user*)
+ * `ls -lat` (*This command will list all files and directories(including hidden files and dictionaries) in the current directory sorted by modification time in long format*)
+ * `ls -a` (*This command will list all files and directories(including hidden files and dictionaries) in the current directory*)
+ * `ls <directory>` , where `<directory>` is `/home/linux/ieng6/cs15lsp23/cs15lsp23sq`, where`sq` is one of the other group members' username for this course (*This command will list all the files and directories in that group members server in that dictionary*)
+ * `cp /home/linux/ieng6/cs15lsp23/public/hello.txt ~/` (*This command will copy the file hello.txt from the directory /home/linux/ieng6/cs15lsp23/public/ to the home directory of the current user*)
+ * `cat /home/linux/ieng6/cs15lwi23/public/hello.txt` (*This command will display the contents of the file hello.txt located in the directory /home/linux/ieng6/cs15lwi23/public/*)
  
  > Here is the example that I tried `ls -lat` and `ls -a` on my computer: 
  ![image](try_some_commands.png)
- 
+ `ls -lat` shows all the files in the dictionary in long format and sorted by modification time. `ls -a` shows all the files in the dictionary.
 ```
 # Having fun exploring what you could do in the server! If you want to 
 quit or log out of the remote server in your terminal, you can use
