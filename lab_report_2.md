@@ -2,7 +2,7 @@
 ## Lin Zhou
 ## A16416268
 ## CSE 15L
-*Create a string server and debug*
+*Create a string server, debug, and reflection*
 
 # Create A String Server
 >Here is my code for the string server:
@@ -23,9 +23,9 @@ This url would call the methods `handleRequest(URI url)` in my `Handler` class. 
 The only value got changed by this request is str (**from empty string to** `I love Jinx`). Let's see how this value changes:
 1. This method first check whether the path of the url is equal to `/`, if not it fall in the else statement.
 2. Then in the else statement, it would check whether the path of the url contains `/add-message` 
-3. If the path does contains `/add-message`, it would first separate the query of this url into array by "=" and save the created array as `parameters`
-4. Then it would check whether the query before "=" equals "s". If it does, str would add(plus) the part of query after the "=" (*The string we wanted to add. In this case `I%20love%20Jinx`; `%20` means space in url*)
- and "\n" (*New line command*)
+3. If the path does contains `/add-message`, it would first separate the query of this url into array by `=` and save the created array as `parameters`
+4. Then it would check whether the query before `=` equals `s`. If it does, str would add(plus) the part of query after the `=` (*The string we wanted to add. In this case `I%20love%20Jinx`; `%20` means space in url*)
+ and `\n` (*New line command*)
  
  
 >Here is another example that I run my server:
@@ -40,12 +40,12 @@ This url would call the methods `handleRequest(URI url)` in my `Handler` class. 
 * `url.getQuery()`, which is the query of this url(`s=Jinx%20is%20the%20Best`)
 * `parameters`, which is a string array `["s", "Jinx%20is%20the%20Best"]` created by separating query by "="
 
-The only value got changed by this request is str (**from "I love Jinx \n" to "I love Jinx\nJinx is the Best\n"**). Let's see how this value changes:
+The only value got changed by this request is str (**from `I love Jinx \n` to `I love Jinx\nJinx is the Best\n`**). Let's see how this value changes:
 1. This method first check whether the path of the url is equal to `/`, if not it fall in the else statement.
 2. Then in the else statement, it would check whether the path of the url contains `/add-message` 
 3. If the path does contains `/add-message`, it would first separate the query of this url into array by "=" and save the created array as `parameters`
-4. Then it would check whether the query before "=" equals "s". If it does, str would add(plus) the part of query after the "=" (*The string we wanted to add. In this case `Jinx%20is%20the%20Best`; `%20` means space in url*)
- and "\n" (*New line command*)
+4. Then it would check whether the query before `=` equals `s`. If it does, str would add(plus) the part of query after the `=` (*The string we wanted to add. In this case `Jinx%20is%20the%20Best`; `%20` means space in url*)
+ and `\n` (*New line command*)
  
  
  ---
@@ -72,7 +72,7 @@ The only value got changed by this request is str (**from "I love Jinx \n" to "I
 >    assertArrayEquals(new int[] {5,4,3,2,1}, input1);
 >  }
 > ```
-> This input is expected to get {5,4,3,2,1} as an output, but it get {5,4,3,4,5} as the output
+> This input is expected to get `{5,4,3,2,1}` as an output, but it get `{5,4,3,4,5}` as the output
 > Here is the image of the test failure as junit:
 > ![failure](fail_code.png)
 
@@ -85,7 +85,7 @@ The only value got changed by this request is str (**from "I love Jinx \n" to "I
 >    assertArrayEquals(new int[] {1,2,3,2,1}, input1);
 >  }
 > ```
-> This input is expected to get {1,2,3,2,1} as an output, and it got {1,2,3,2,1} as expected, so the test passed.
+> This input is expected to get `{1,2,3,2,1}` as an output, and it got `{1,2,3,2,1}` as expected, so the test passed.
 > Here is the image of the test as junit:
 > ![success](success_code.png)
 
@@ -104,3 +104,7 @@ Here is one way to fix this code to become functional:
 }
 ```
 In the code block above, I saved the input array into a new int array called temp before the for loop. In this way, as the elements changed in the input array from the back, it won't have any impacts on the array we are copying elements from, which is temp. 
+
+ ---
+ # Reflection
+ During week2's lab, we learned how to start a server from some java files. Before, I thought a server would require a huge amount of coding and very difficult skills or technetics to start and run. However, week2's lab lead us to run a server with several files and not much amount of codes and we made a small, functional server with some simple commands by putting different values in the query and path, which surprised me a lot. That is what I haven't learned before and I found that interesting and amazing.
