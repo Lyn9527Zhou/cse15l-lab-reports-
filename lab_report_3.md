@@ -5,7 +5,7 @@
 *Command line options for `grep`*
 
 # Command line option `-n`
-`-n` option helps user to print the line numbers where the pattern was found.[^1]
+`-n` option helps user to print the line numbers where the pattern was found.[^1][^2]
 
 Here is an example of using `-n` on the file `/technical/911report/chapter-1.txt`
 
@@ -44,7 +44,7 @@ Then I use `grep -n` to find the all text with pattern of `chapter-13` inside th
 
 ---
 # Command line option `-i`
-`-i` option helps user to find the pattern inside the txt file ignoring cases(*case-insensitive search*)[^1]
+`-i` option helps user to find the pattern inside the txt file ignoring cases(*case-insensitive search*)[^1][^2]
 
 Here is an example of using `-i` on the file `/technical/911report/chapter-1.txt`
 ```
@@ -87,7 +87,7 @@ but writing duplicate commands to find all possible uppercases of that word is a
 
 ---
 # Command line option `-c`
-`-c` option helps user to find how many lines contains text that matches the pattern and only output the count of lines[^1]
+`-c` option helps user to find how many lines contains text that matches the pattern and only output the count of lines[^1][^2]
 
 Here is an example of using `-c`:
 ```
@@ -111,4 +111,73 @@ using `grep -c` to count how many lines contains `chapter-13` inside the `find-r
 > technical/911report/chapter-13.3.txt
 > ```
 
+Here comes another example:
+```
+#Here is the code
+grep -c -i "Homeland" technical/911report/chapter-1.txt
+```
+```
+#Here is the output
+2
+```
+
+This code as I did in `grep -i` example 1, it finds all the lines contains `Homeland` regardless the cases and then `grep -c` makes this code to return the number of lines contains that pattern, which is 2 as we showed above.
+
+
+`grep -c` is quite useful since it does some similar job as `wc` does but in a more flexiable way since it could combine other option command associated with `grep` such as `-i`, `-v`(we would discuss in next part), and etc. Besides, it is also a good tool to keep track the appearance of some certain pattern inside the txt file.
+
+
+
+---
+# Command line option `-v`
+`-v` option helps user to print lines that does not match the pattern. [^1][^2]
+
+Here is an example of using 'grep -v':
+```
+#Here is the code
+find technical/911report > find-results.txt
+grep -v "chapter-1" find-results.txt
+```
+```
+#Here is the output
+technical/911report
+technical/911report/chapter-3.txt
+technical/911report/chapter-2.txt
+technical/911report/chapter-5.txt
+technical/911report/chapter-6.txt
+technical/911report/chapter-7.txt
+technical/911report/chapter-9.txt
+technical/911report/chapter-8.txt
+technical/911report/preface.txt
+```
+
+This code still redirects all the files inside the `technical/911report` to the txt file called `find-results.txt` and then 
+use `grep -v` to find and print all the lines that does not match the pattern(*does not contain `chapter-1`*)
+
+
+Here is another example:
+```
+#Here is the code
+find technical/911report > find-results.txt
+grep -v "chapter" find-results.txt
+```
+```
+#Here is the output
+technical/911report
+technical/911report/preface.txt
+```
+
+This code still redirects all the files inside the `technical/911report` to the txt file called `find-results.txt` and then 
+use `grep -v` to find and print all the lines that does not contain `chapter`
+
+
+`grep -v` is quite useful when we want to filtering some patterns, in our case, like `chapter` and etc. When we want to find lines that does not contain some pattern, `grep -v` would be quite helpful. For example, when we want to count how many files in the `technical/911report` that does not contains `chapter`, we could use 
+```
+find technical/911report > find-results.txt
+grep -c -v "chapter" find-results.txt
+```
+This would print 2 since there are only two files that does not contain `chapter`(`technical/911report` and `technical/911report/preface.txt`)
+
+
 [^1]:[Grep - Wikibooks](https://en.wikibooks.org/wiki/Grep)
+[^2]:[ChatGPT](https://chat.openai.com/) by searching `show me some grep command line options and examples`
