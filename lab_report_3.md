@@ -178,6 +178,50 @@ grep -c -v "chapter" find-results.txt
 ```
 This would print 2 since there are only two files that does not contain `chapter`(`technical/911report` and `technical/911report/preface.txt`)
 
+---
+# ChatGPT
+I searched on [ChatGPT](https://chat.openai.com/) and searched `show me some grep command line options and examples`
+
+It returns
+```
+Sure! grep is a powerful command-line tool for searching patterns in text files. Here are some commonly used options and examples:
+1. Basic pattern search:
+grep "pattern" file.txt
+This command searches for "pattern" in the file named file.txt and prints all lines containing the pattern.
+
+2. Case-insensitive search:
+grep -i "pattern" file.txt
+The -i option enables case-insensitive searching. It matches both uppercase and lowercase versions of the pattern.
+
+3. Display line numbers:
+grep -n "pattern" file.txt
+The -n option shows line numbers along with the matched lines.
+
+4. Recursive search in directories:
+grep -r "pattern" directory/
+The -r option enables recursive searching in the specified directory and its subdirectories.
+
+5. Invert the match:
+grep -v "pattern" file.txt
+The -v option inverts the match, printing all lines that do not contain the pattern.
+
+6. Regular expression search:
+grep -E "pattern" file.txt
+The -E option enables extended regular expression syntax for pattern matching.
+
+7. Display surrounding lines:
+grep -C 2 "pattern" file.txt
+The -C option displays two lines of context before and after each matched line.
+
+8. Match whole words only:
+grep -w "pattern" file.txt
+The -w option matches whole words only, ignoring partial matches.
+
+These are just a few examples of the options and usage of the grep command. You can find more options and details in the grep man page by running man grep in your terminal.
+```
+
+I used this output to get further understanding of the option command of grep and I used `-i`, `-n`, `-c`, `-v`.
+
 
 [^1]:[Grep - Wikibooks](https://en.wikibooks.org/wiki/Grep)
 [^2]:[ChatGPT](https://chat.openai.com/) by searching `show me some grep command line options and examples`
